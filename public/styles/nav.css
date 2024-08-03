@@ -9,7 +9,7 @@ nav{
 
 nav span{
   padding: 1.5em;
-  align-self: flex-end;
+  align-items: center;
   font-family: "Bungee";
   transition: transform .2s;
 }
@@ -18,14 +18,13 @@ nav span:hover{
 }
 
 nav span.right-content{
+  display: flex;
   font-family: "Source Sans 3" , sans-serif;
   padding: 1.5em;
+  flex-direction:column;
 }
 
-nav span i{
-  justify-content: center;
-  margin-left: 50%;
-}
+
 nav span:hover i{
   color:red
 }
