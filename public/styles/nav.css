@@ -1,0 +1,31 @@
+nav{
+  display: flex;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  height: 120px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+nav span{
+  padding: 1.5em;
+  align-self: flex-end;
+  font-family: "Bungee";
+  transition: transform .2s;
+}
+nav span:hover{
+  transform: scale(1.1);
+}
+
+nav span.right-content{
+  font-family: "Source Sans 3" , sans-serif;
+  padding: 1.5em;
+}
+
+nav span i{
+  justify-content: center;
+  margin-left: 50%;
+}
+nav span:hover i{
+  color:red
+}
