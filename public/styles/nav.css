@@ -1,30 +1,38 @@
-nav{
+nav {
   display: flex;
-  background-color: #4056A1;
-  color: #FFFFFF;
+  background-color: #4056a1;
+  color: #ffffff;
   height: 120px;
   width: 100%;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
 }
 
-nav span{
+nav span {
   padding: 1.5em;
   align-items: center;
   font-family: "Bungee";
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
-nav span:hover{
+nav span:hover {
   transform: scale(1.1);
 }
 
-nav span.right-content{
+nav span.right-content {
   display: flex;
-  font-family: "Source Sans 3" , sans-serif;
-  padding: 1.5em;
-  flex-direction:column;
+  font-family: "Source Sans 3", sans-serif;
+  flex-direction: column;
+  justify-content: center;
+}
+nav span.right-content:hover {
+  display: flex;
+  font-family: "Source Sans 3", sans-serif;
+  flex-direction: column;
+  justify-content: center;
+  transform: scale(0.9);
 }
 
-
-nav span:hover i{
-  color:red
+nav span:hover i {
+  color: rgb(220, 123, 123);
 }
