@@ -1,15 +1,15 @@
 /**
  * Responsible for the character counter.
  */
-
+const MAXCHAR = 140;
 
 $(document).ready(function () {
   //get the input value
-  let remainingChars = 140;
+  let remainingChars = MAXCHAR;
   $("#tweet-text").on("input", function () {
     let textCount = $(this).val().length;
 
-    remainingChars = 140 - textCount;
+    remainingChars = MAXCHAR - textCount;
     if (remainingChars < 0) {
       $(".counter").addClass("counter-red");
     } else {
