@@ -1,6 +1,6 @@
 .tweet-button {
   background-color: #4152a1;
-  font-family: "Bungee";
+  
   color: white;
   border-radius: 5px;
   border : transparent;
@@ -41,6 +41,7 @@
 }
 
 .button-counter {
+  font-family: "Bungee";
   display: flex;
   padding-top: 20px;
   flex-direction: row;
