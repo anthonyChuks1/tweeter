@@ -4,10 +4,10 @@
   color: white;
   border-radius: 5px;
   border : transparent;
-  background-image: url("https://www.transparenttextures.com/patterns/white-carbonfiber.png");
+  
 }
 .tweet-button:hover {
-  background-color: #5b72d7;
+  background-color:#0e174123;
 }
 
 .tweet-textarea {
