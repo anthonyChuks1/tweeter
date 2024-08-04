@@ -49,3 +49,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.counter-red{
+  color: rgb(226, 38, 38)
+}
