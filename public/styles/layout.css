@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  
 }
 *,
 *:before,
@@ -18,7 +19,6 @@ html {
 
 body {
   color: #545149;
-  background-color: cornsilk;
   font-family: "Source Sans 3", sans-serif;
   font-size: 24px;
   padding-top: 120px;
@@ -33,6 +33,13 @@ body {
 
 main {
   display: flex;
-  padding: 30px;
-  flex-direction: column;
+  margin: 30px;
+  width: 90%;
+  align-content: flex-start;
+  align-self: center;
+  justify-self: center ;
+}
+
+section{
+  width: 100%;
 }

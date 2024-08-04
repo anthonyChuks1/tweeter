@@ -2,39 +2,48 @@
   background-color: #4152a1;
   font-family: "Bungee";
   color: white;
-  margin-right: 45%;
   border-radius: 5px;
+  border : transparent;
+  background-image: url("https://www.transparenttextures.com/patterns/white-carbonfiber.png");
 }
 .tweet-button:hover {
   background-color: #5b72d7;
 }
 
 .tweet-textarea {
-  display: flex;
-  justify-content: center;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  width: 50%;
-  background-color: rgb(248, 243, 226);
-  border-radius: 10px;
-  border-bottom-color: rgba(0, 0, 0, 0.233);
+  display:flex;
+  justify-content: space-between;
   text-align: center;
-  opacity: 0.5;
-  overflow: hidden;
-  margin: 50px;
+  width:100%;
 }
-.tweet-textarea:hover {
+
+.tweet-textarea textarea {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.233);
+  background-color: transparent;
+  
+  border-right: transparent;
+  border-left : transparent;
+  border-top: transparent;
+  border-width: thick;
+
+}
+
+.tweet-textarea:hover textarea {
   opacity: 0.7;
   border-bottom-color: transparent;
 }
-.tweet-textarea:focus {
+.tweet-textarea:focus textarea {
   opacity: 0.5;
   border-color: transparent;
 }
 
 .button-counter {
   display: flex;
-  margin-left: 50px;
   padding-top: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
