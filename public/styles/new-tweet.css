@@ -1,20 +1,21 @@
 .tweet-button {
   background-color: #4152a1;
-  
-  color: white;
+
+  color:#fafcffa2;
   border-radius: 5px;
-  border : transparent;
-  
+  border: transparent;
 }
 .tweet-button:hover {
-  background-color:#0e174123;
+  background-color: #0e174123;
 }
 
 .tweet-textarea {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   text-align: center;
-  width:100%;
+  width: 100%;
+  
+  
 }
 
 .tweet-textarea textarea {
@@ -23,22 +24,24 @@
   border-radius: 1px;
   border-bottom-color: rgba(0, 0, 0, 0.233);
   background-color: transparent;
-  
   min-width: inherit;
   border-right: transparent;
-  border-left : transparent;
+  border-left: transparent;
   border-top: transparent;
   border-width: thick;
-
+  resize: vertical ;
 }
 
-.tweet-textarea  textarea:hover{
+.tweet-textarea textarea:hover {
   opacity: 0.5;
   border-bottom-color: transparent;
+  
 }
-.tweet-textarea:focus textarea:focus {
+.tweet-textarea textarea:focus {
   opacity: 0.5;
   border-color: transparent;
+  height: 200px;
+
 }
 
 .button-counter {
@@ -50,6 +53,6 @@
   align-items: center;
 }
 
-.counter-red{
-  color: rgb(226, 38, 38)
+.counter-red {
+  color: rgb(226, 38, 38);
 }

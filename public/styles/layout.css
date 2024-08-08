@@ -23,7 +23,7 @@ body {
   font-family: "Source Sans 3", sans-serif;
   font-size: 24px;
   padding-top: 120px;
-  background-color: #b5c8e0;
+  background-color:#fafcff80;
   background-image: url("https://www.transparenttextures.com/patterns/white-carbonfiber.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
@@ -37,9 +37,13 @@ main {
   width: 90%;
   background-color: inherit;
   background-image: inherit;
+  padding: 20px;
   
 }
 
 section{
   width: 100%;
+  padding: 30px;
+
 }
+

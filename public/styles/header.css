@@ -5,9 +5,10 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  color: azure;
+  color: rgb(210, 217, 217);
   font-family: "Source Sans 3", sans-serif;
-  background-color: #040423;
-  background-image: url("https://www.transparenttextures.com/patterns/white-carbonfiber.png");
+  background-color:#687cbc;
+
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+
