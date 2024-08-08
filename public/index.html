@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type=" text/css" />
     <link rel="stylesheet" href="/styles/header.css" type=" text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type=" text/css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -54,9 +55,9 @@
     </nav>
 
     <!--Header -->
-    <header>
+    <header >
       <div>
-        <img src="/images/profile-hex.png" />
+        <img src="/images/profile-hex.png" alt= "Profile picture"/>
       </div>
       <br />
       <div>
@@ -66,8 +67,9 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <!--New Tweet section-->
-      <section >
+      <section>
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
           <label for="tweet-text"></label>
@@ -84,6 +86,35 @@
           </div>
         </form>
       </section>
+
+        <!--Tweets section-->
+        <section>
+          <article class="tweet">
+            <header>
+              <!-- User avatar and name go here -->
+               <div>
+              <img src="/images/profile-hex.png" alt="User avatar" class="avatar">
+              <p class="username">Jane Constantine</p>
+              </div>
+              <p>@janeconstantine </p>
+            </header>
+            <p class="tweet-content">
+              <!-- This is where the tweet text will go -->
+              This is a sample tweet text.<br>
+              with next line
+            </p>
+            <footer>
+              <!-- Action icons go here -->
+               <div>Time posted</div>
+               <div>
+              <i class="fa fa-reply"></i>
+              <i class="fa fa-retweet"></i>
+              <i class="fa fa-heart"></i>
+              </div>
+            </footer>
+          </article>
+        </section>
+      
     </main>
   </body>
 </html>
