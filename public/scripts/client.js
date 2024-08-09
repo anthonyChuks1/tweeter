@@ -67,7 +67,7 @@ const renderTweets = function (tweets) {
   console.log("Rendering tweets:", tweets);
   for (let tweet of tweets) {
     const tweetElement = createTweetElement(tweet);
-    $("#tweets-container").append(tweetElement);
+    $("#tweets-container").prepend(tweetElement);
   }
 };
 
