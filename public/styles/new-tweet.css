@@ -57,3 +57,13 @@
 .counter-red {
   color: rgb(226, 38, 38);
 }
+
+.limit-alert{
+  display: flex;
+  color: red;
+  border:5px solid red;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.367);
+}
