@@ -74,15 +74,18 @@ $(document).ready(function () {
         console.log("Tweet posted successfully:", response);
         console.log(serializedData);
         //reload the page each time a tweet s submited
-        location.reload();
+        loadTweets();
+        $('#tweet-text').val('');        
+        $('.counter').val('140');        
       },
       error: function (error) {
         console.error("Error posting tweet:", error);
       },
+      
     });
   });
   const loadTweets = function () {
-    $.get("/tweets", { method: "GET" }).then(function (data) {
+    $.get("/tweets").then(function (data) {
       console.log("All them data: ", data);
       renderTweets(data);
     });
