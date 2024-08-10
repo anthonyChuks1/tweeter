@@ -65,15 +65,8 @@ $(document).ready(function () {
 
     const tweetText = $("#tweet-text").val().trim();
 
-    if (!tweetText.length) {
-      alert("Tweet is empty");
-      resetTxtarea();
-      return;
-    } else if (tweetText.length > 140) {
-      alert("Tweet is too long \n Limit is 140 letters");
-      resetTxtarea()
-      return;
-    }
+    if(!isTweetValid(tweetText)) return;
+
     const serializedData = $(this).serialize(); // Serialize form data
 
     // AJAX POST request to submit the new tweet
@@ -106,4 +99,15 @@ $(document).ready(function () {
 const resetTxtarea = function () {
   $("#tweet-text").val("");
   $(".counter").val("140");
+};
+
+const isTweetValid = function (text) {
+  if (!text.length) {
+    alert("Tweet is empty");
+    return false;
+  } else if (text.length > 140) {
+    alert("Tweet is too long \n Limit is 140 letters");
+    return false;
+  }
+  return true;
 };
