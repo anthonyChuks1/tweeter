@@ -9,6 +9,10 @@ const createTweetElement = function (tweet) {
   const { user, content, created_at } = tweet;
 
   // Constructing the tweet element using template literals
+  const safeHTML = `<p class="tweet-content">
+            <!-- This is where the tweet text will go -->
+            ${escape(content.text)}
+          </p>`;
   let $tweet = ` 
         <article class="tweet">
           <header>
@@ -19,10 +23,7 @@ const createTweetElement = function (tweet) {
             </div>
             <p>${user.handle}</p>
           </header>
-          <p class="tweet-content">
-            <!-- This is where the tweet text will go -->
-            ${content.text}
-          </p>
+          ${safeHTML}
           <footer>
             <!-- Timestamp and action icons go here -->
             <div>
@@ -86,28 +87,54 @@ $(document).ready(function () {
       },
     });
   });
-  const loadTweets = function () {
-    $.get("/tweets").then(function (data) {
-      console.log("All them data: ", data);
-      renderTweets(data);
-    });
-  };
+  // Function to load tweets from the server and render them on the page
+const loadTweets = function () {
+  // Clear the textarea content
+  $("#tweets-container").empty();
+  
+  // Perform a GET request to fetch tweets
+  $.get("/tweets").then(function (data) {
+    // Render the fetched tweets
+    renderTweets(data);
+  });
+};
 
-  loadTweets();
+// Initial call to load tweets when the page loads
+loadTweets();
 });
 
+// Function to reset the textarea and counter
 const resetTxtarea = function () {
+  // Clear the textarea content
   $("#tweet-text").val("");
+  
+  // Reset the character counter to 140
   $(".counter").val("140");
 };
 
+// Function to validate the tweet text
 const isTweetValid = function (text) {
+  // Check if the tweet is empty
   if (!text.length) {
     alert("Tweet is empty");
     return false;
-  } else if (text.length > 140) {
+  } 
+  // Check if the tweet exceeds 140 characters
+  else if (text.length > 140) {
     alert("Tweet is too long \n Limit is 140 letters");
     return false;
   }
   return true;
+};
+
+// Function to escape potentially unsafe characters in a string
+const escape = function (str) {
+  // Create a temporary div element
+  let div = document.createElement("div");
+  
+  // Append the text node to the div
+  div.appendChild(document.createTextNode(str));
+  
+  // Return the escaped HTML content
+  return div.innerHTML;
 };
