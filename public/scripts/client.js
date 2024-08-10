@@ -4,32 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
-
 // Function to create a tweet element from a tweet object
 const createTweetElement = function (tweet) {
   const { user, content, created_at } = tweet;
@@ -51,7 +25,9 @@ const createTweetElement = function (tweet) {
           </p>
           <footer>
             <!-- Timestamp and action icons go here -->
-            <div>${new Date(created_at).toLocaleString()}</div>
+            <div>
+              ${timeago.format(created_at, "en_US")}              
+            </div>
             <div>
               <i class="fa fa-reply"></i>
               <i class="fa fa-retweet"></i>
@@ -79,28 +55,38 @@ const renderTweets = function (tweets) {
 };
 
 // Document ready function to ensure DOM is fully loaded
-$(document).ready(function() {
+$(document).ready(function () {
   // Render initial tweets
-  renderTweets(data);
+  //renderTweets(data);
 
   // Event listener for new tweet submission
-  $('form').on('submit', function(event) {
+  $("form").on("submit", function (event) {
     event.preventDefault(); // Prevent the default form submission
-    
+
     const serializedData = $(this).serialize(); // Serialize form data
 
     // AJAX POST request to submit the new tweet
     $.ajax({
-      type: 'POST',
-      url: '/tweets',
+      type: "POST",
+      url: "/tweets",
       data: serializedData,
-      success: function(response) {
-        console.log('Tweet posted successfully:', response);
+      success: function (response) {
+        console.log("Tweet posted successfully:", response);
         console.log(serializedData);
+        //reload the page each time a tweet s submited
+        location.reload();
       },
-      error: function(error) {
-        console.error('Error posting tweet:', error);
-      }
+      error: function (error) {
+        console.error("Error posting tweet:", error);
+      },
     });
   });
+  const loadTweets = function () {
+    $.get("/tweets", { method: "GET" }).then(function (data) {
+      console.log("All them data: ", data);
+      renderTweets(data);
+    });
+  };
+
+  loadTweets();
 });
