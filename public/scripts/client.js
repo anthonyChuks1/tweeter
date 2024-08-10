@@ -60,13 +60,13 @@ $(document).ready(function () {
   // Render initial tweets
   //renderTweets(data);
   $("#limit-alert").hide();
-  
+
   // Event listener for new tweet submission
   $("form").on("submit", function (event) {
     event.preventDefault(); // Prevent the default form submission
 
     const tweetText = $("#tweet-text").val().trim();
-    
+
     if (!isTweetValid(tweetText)) return;
 
     const serializedData = $(this).serialize(); // Serialize form data
@@ -117,20 +117,17 @@ const isTweetValid = function (text) {
   $("#limit-alert").hide();
   // Check if the tweet is empty
   if (!text.length) {
-    //alert("Tweet is empty");
-    
-    
-    $("#limit-alert").text("You cannot enter an empty tweet.").show();
+    $("#limit-alert").text("⚠️ You cannot enter an empty tweet. ⚠️").show();
+    setTimeout(() => $("#limit-alert").hide(), 5000);
     return false;
   }
   // Check if the tweet exceeds 140 characters
   else if (text.length > 140) {
-   // alert("Tweet is too long \n Limit is 140 letters");  
-    
-    $("#limit-alert").text("Woah. The limit is 140 letters.").show();
+    $("#limit-alert").text(" ⚠️ Woah. The limit is 140 letters. ⚠️").show();
+    setTimeout(() => $("#limit-alert").hide(), 5000);
     return false;
   }
- 
+
   return true;
 };
 
