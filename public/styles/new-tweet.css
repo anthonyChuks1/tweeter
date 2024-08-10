@@ -40,7 +40,8 @@
 .tweet-textarea textarea:focus {
   opacity: 0.5;
   border-color: transparent;
-  height: 200px;
+  min-height: 50px;
+  max-height: 200px;
 
 }
 
