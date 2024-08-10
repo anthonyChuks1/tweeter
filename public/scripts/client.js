@@ -66,7 +66,7 @@ $(document).ready(function () {
 
     const tweetText = $("#tweet-text").val().trim();
 
-    if(!isTweetValid(tweetText)) return;
+    if (!isTweetValid(tweetText)) return;
 
     const serializedData = $(this).serialize(); // Serialize form data
 
@@ -78,7 +78,6 @@ $(document).ready(function () {
       success: function (response) {
         console.log("Tweet posted successfully:", response);
         console.log(serializedData);
-        //reload the page each time a tweet is submited
         loadTweets();
         resetTxtarea();
       },
@@ -88,42 +87,50 @@ $(document).ready(function () {
     });
   });
   // Function to load tweets from the server and render them on the page
-const loadTweets = function () {
-  // Clear the textarea content
-  $("#tweets-container").empty();
-  
-  // Perform a GET request to fetch tweets
-  $.get("/tweets").then(function (data) {
-    // Render the fetched tweets
-    renderTweets(data);
-  });
-};
+  const loadTweets = function () {
+    // Clear the textarea content
+    $("#tweets-container").empty();
 
-// Initial call to load tweets when the page loads
-loadTweets();
+    // Perform a GET request to fetch tweets
+    $.get("/tweets").then(function (data) {
+      // Render the fetched tweets
+      renderTweets(data);
+    });
+  };
+
+  // Initial call to load tweets when the page loads
+  loadTweets();
 });
 
 // Function to reset the textarea and counter
 const resetTxtarea = function () {
   // Clear the textarea content
   $("#tweet-text").val("");
-  
+
   // Reset the character counter to 140
   $(".counter").val("140");
 };
 
 // Function to validate the tweet text
 const isTweetValid = function (text) {
+  $("#limit-alert").removeClass("limit-alert");
+  $("#limit-alert").text("");
   // Check if the tweet is empty
   if (!text.length) {
-    alert("Tweet is empty");
-    return false;
-  } 
-  // Check if the tweet exceeds 140 characters
-  else if (text.length > 140) {
-    alert("Tweet is too long \n Limit is 140 letters");
+    //alert("Tweet is empty");
+    
+    $("#limit-alert").addClass("limit-alert");
+    $("#limit-alert").text("You cannot enter an empty tweet.");
     return false;
   }
+  // Check if the tweet exceeds 140 characters
+  else if (text.length > 140) {
+   // alert("Tweet is too long \n Limit is 140 letters");  
+    $("#limit-alert").addClass("limit-alert");
+    $("#limit-alert").text("Woah. The limit is 140 letters.");
+    return false;
+  }
+ 
   return true;
 };
 
@@ -131,10 +138,10 @@ const isTweetValid = function (text) {
 const escape = function (str) {
   // Create a temporary div element
   let div = document.createElement("div");
-  
+
   // Append the text node to the div
   div.appendChild(document.createTextNode(str));
-  
+
   // Return the escaped HTML content
   return div.innerHTML;
 };
