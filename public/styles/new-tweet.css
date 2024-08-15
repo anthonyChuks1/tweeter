@@ -35,14 +35,9 @@
 
 .tweet-textarea textarea:hover {
   opacity: 0.5;
-  border-bottom-color: transparent;
-
-  
-  
 }
 .tweet-textarea textarea:focus {
-  opacity: 0.5;
-  border-color: transparent;
+  outline: none;
   min-height: 50px;
   max-height: 200px;
 
