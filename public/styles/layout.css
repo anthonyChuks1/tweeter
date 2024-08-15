@@ -19,11 +19,11 @@ html {
 
 body {
   
-  color: #545149;
+  color: #1212119f;
   font-family: "Source Sans 3", sans-serif;
   font-size: 24px;
   padding-top: 120px;
-  background-color:#fafcff80;
+  background-color: rgb(0, 0, 0);
   background-image: url("https://www.transparenttextures.com/patterns/white-carbonfiber.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
@@ -46,4 +46,6 @@ section{
   padding: 30px;
 
 }
+
+
 
