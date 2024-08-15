@@ -141,7 +141,7 @@
     width: 33.3%;
   }
   .tweet header {
-    border: 1px solid transparent;
+    border:transparent;
     width: 100%;
   }
 }
