@@ -1,7 +1,8 @@
 .tweet {
-  background-color: #fff;
+  background-color: #fafafa78;
   padding: 20px;
-  border: 1px solid #000001;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #00000026;
   margin: 20px 0;
   border-radius: 5px;
 }
@@ -9,10 +10,11 @@
 .tweet header {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  background-color: inherit;
   height: 10%; 
+  color: #41464a;
+  margin: 0px;
 }
 .tweet header div{
   font-family: "Source Sans 3", sans-serif;
@@ -39,7 +41,8 @@
 
 .tweet-content {
   margin: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 2px double #2828283d;
+  color: #00000096
 }
 
 .tweet footer {

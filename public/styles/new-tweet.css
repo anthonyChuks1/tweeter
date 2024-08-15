@@ -21,6 +21,7 @@
 .tweet-textarea textarea {
   width: 100%;
   overflow: hidden;
+  color: white;
   border-radius: 1px;
   border-bottom-color: rgba(0, 0, 0, 0.233);
   background-color: transparent;
@@ -35,6 +36,8 @@
 .tweet-textarea textarea:hover {
   opacity: 0.5;
   border-bottom-color: transparent;
+
+  
   
 }
 .tweet-textarea textarea:focus {
@@ -59,7 +62,7 @@
 }
 
 #limit-alert{
-  
+  display:none;
   color: red;
   border:5px solid red;
   height: auto;
