@@ -103,13 +103,15 @@ $(document).ready(function () {
 
   //event listener that scrolls to the top when clicked
   $("#scroll-up").hide();
-  $(this).on("scroll",function() {
-    $("#scroll-up").show();
-  })
+  $(this).on("scroll", function() {
+    if ($(this).scrollTop() > 100) {
+      $("#scroll-up").fadeIn('slow');
+    } else {
+      $("#scroll-up").fadeOut('slow');
+    }
+  });
   $("#scroll-up").on("click", function(){
-    $('html, body').animate({scrollTop: $('#limit-alert').offset().top}, 1000);
-    $("#scroll-up").hide();
-    
+    $('html, body').animate({scrollTop: 0}, 1000);
   });
 
 
