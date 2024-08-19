@@ -1,4 +1,5 @@
 /*Desktop style*/
+
 /* Smartphones: minimum width of 320px to maximum width of around 420px */
 @media only screen and (min-width: 320px) and (max-width: 420px) {
   /* Write smartphone only styles here */
@@ -10,37 +11,41 @@
     font-size: 15px;
   }
 }
+
 /* Another smartphone breakpoint is maximum width of around 420px */
 @media only screen and (max-width: 420px) {
   /* Write smartphone only styles here */
   .tweet {
     font-size: 15px;
-  }
-  .tweet header {
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: transparent;
+    & header {
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: transparent;
+    }
   }
   .tweet-button {
     font-size: 30px;
   }
+
   nav {
     background-color: rgba(28, 28, 50, 0.985);
     opacity: 1;
-  }
-  nav span.right-content {
-    font-size: 16px;
+    & span.right-content {
+      font-size: 16px;
+    }
   }
   header {
     display: flex;
     flex-direction: column;
     background-color: rgba(28, 28, 50, 0.985);
-  }
-  header img {
-    width: 200px;
-    align-self: center;
+
+    & img {
+      width: 200px;
+      align-self: center;
+    }
   }
 }
+
 /* Tablet: minimum width of 768px to maximum width of 1024px */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   /* Write Tablet only CSS here */
@@ -49,28 +54,33 @@
     width: 100%;
     font-size: 20px;
   }
-  .tweet header {
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: transparent;
+  .tweet {
+    & header {
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: transparent;
+    }
   }
+
   nav {
     background-color: rgba(28, 28, 50, 0.985);
     opacity: 1;
-  }
-  nav span.right-content {
-    font-size: 16px;
+    & span.right-content {
+      font-size: 16px;
+    }
   }
   header {
     display: flex;
     flex-direction: column;
     background-color: rgba(28, 28, 50, 0.985);
-  }
-  header img {
-    width: 200px;
-    align-self: center;
+
+    & img {
+      width: 200px;
+      align-self: center;
+    }
   }
 }
+
 /* Another tablet breakpoint is maximum width of 1024px */
 @media only screen and (max-width: 1024px) {
   /* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
@@ -79,30 +89,36 @@
     width: 100%;
     font-size: 20px;
   }
-  .tweet header {
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: transparent;
+  .tweet {
+    & header {
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: transparent;
+    }
   }
+
   nav {
     background-color: rgba(28, 28, 50, 0.985);
     opacity: 1;
-  }
-  nav span.right-content {
-    font-size: 16px;
+    & span.right-content {
+      font-size: 16px;
+    }
   }
   header {
     background-color: rgba(28, 28, 50, 0.985);
-  }
-  header img {
-    width: 200px;
-    align-self: center;
+
+    & img {
+      width: 200px;
+      align-self: center;
+    }
   }
 }
+
 /* Another tablet breakpoint is minimum width of 768px */
 @media only screen and (min-width: 768px) {
   /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
 }
+
 /* Laptops / Desktops: minimum width of 1024px */
 @media only screen and (min-width: 1024px) {
   /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
@@ -110,6 +126,7 @@
     display: flex;
     flex-direction: row;
   }
+
   header {
     display: flex;
     margin: 20px;
@@ -121,6 +138,7 @@
     width: 100%;
   }
 }
+
 /* Laptops / Desktops: minimum width of 960px */
 @media only screen and (min-width: 960px) {
   /* Write CSS rules that target small laptop screen sizes and beyond */

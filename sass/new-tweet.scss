@@ -1,12 +1,12 @@
 .tweet-button {
   background-color: #4152a1;
-  color: rgba(250, 252, 255, 0.6352941176);
+
+  color: #fafcffa2;
   border-radius: 5px;
   border: transparent;
 }
-
 .tweet-button:hover {
-  background-color: rgba(14, 23, 65, 0.137254902);
+  background-color: #0e174123;
 }
 
 .tweet-textarea {
@@ -34,7 +34,6 @@
 .tweet-textarea textarea:hover {
   opacity: 0.5;
 }
-
 .tweet-textarea textarea:focus {
   outline: none;
   min-height: 50px;

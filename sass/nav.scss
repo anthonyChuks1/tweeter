@@ -1,0 +1,40 @@
+$nav-bg-color: #4056a1;
+$nav-txt-color: #ffffff;
+$hover-color: rgb(220, 123, 123);
+$font-family-bungee: "Bungee";
+$font-family-source-sans: "Source Sans 3", sans-serif;
+
+nav {
+  display: flex;
+  background-color: $nav-bg-color;
+  color: $nav-txt-color;
+  height: 120px;
+  width: 100%;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  align-items: center;
+
+  span {
+    padding: 1.5em;
+    align-items: center;
+    font-family: $font-family-bungee;
+    transition: transform 0.2s;
+  }
+  span:hover {
+    transform: scale(1.1);
+  }
+
+  .right-content {
+    display: flex;
+    font-family: $font-family-source-sans;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .right-content:hover {
+    transform: scale(0.9);
+    i {
+      color: $hover-color;
+    }
+  }
+}

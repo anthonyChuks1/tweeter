@@ -9,7 +9,6 @@ nav {
   top: 0;
   align-items: center;
 }
-
 nav span {
   padding: 1.5em;
   align-items: center;
@@ -19,21 +18,15 @@ nav span {
 nav span:hover {
   transform: scale(1.1);
 }
-
-nav span.right-content {
+nav .right-content {
   display: flex;
   font-family: "Source Sans 3", sans-serif;
   flex-direction: column;
   justify-content: center;
 }
-nav span.right-content:hover {
-  display: flex;
-  font-family: "Source Sans 3", sans-serif;
-  flex-direction: column;
-  justify-content: center;
+nav .right-content:hover {
   transform: scale(0.9);
 }
-
-nav span:hover i {
+nav .right-content:hover i {
   color: rgb(220, 123, 123);
 }

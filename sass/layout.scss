@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
@@ -16,8 +15,9 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
-  color: rgba(18, 18, 17, 0.6235294118);
+  color: #1212119f;
   font-family: "Source Sans 3", sans-serif;
   font-size: 24px;
   padding-top: 120px;
@@ -29,6 +29,7 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main {
   margin: 0 auto;
   width: 90%;
