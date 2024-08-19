@@ -98,9 +98,20 @@ $(document).ready(function () {
       $("#tweet-text").focus();
       
       hidden = false;
-    }
-  
+    }  
   });
+
+  //event listener that scrolls to the top when clicked
+  $("#scroll-up").hide();
+  $(this).on("scroll",function() {
+    $("#scroll-up").show();
+  })
+  $("#scroll-up").on("click", function(){
+    $('html, body').animate({scrollTop: $('#limit-alert').offset().top}, 1000);
+    $("#scroll-up").hide();
+    
+  });
+
 
   // Function to load tweets from the server and render them on the page
   $("#limit-alert").hide();
