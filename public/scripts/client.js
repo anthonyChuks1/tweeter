@@ -42,8 +42,6 @@ const createTweetElement = function (tweet) {
 
 // Function to render tweets on the page
 const renderTweets = function (tweets) {
-  // Log the tweets being rendered
-  console.log("Rendering tweets:", tweets);
 
   // Loop through each tweet
   for (let tweet of tweets) {
@@ -52,6 +50,7 @@ const renderTweets = function (tweets) {
 
     // Append the tweet element to the tweets container
     $("#tweets-container").prepend(tweetElement);
+    
   }
 };
 
@@ -59,7 +58,6 @@ const renderTweets = function (tweets) {
 $(document).ready(function () {
   // Render initial tweets
   //renderTweets(data);
-  $("#limit-alert").hide();
 
   // Event listener for new tweet submission
   $("form").on("submit", function (event) {
@@ -87,7 +85,25 @@ $(document).ready(function () {
       },
     });
   });
+
+  //Event listener for the new tweet show and hide form
+  $("form").hide();
+  let hidden = true;
+  $("#new-tweet-button").on("click", function (event) {
+    if (!hidden) {
+      $("form").slideUp('slow');
+      hidden = true;
+    } else {
+      $("form").slideDown('slow');
+      $("#tweet-text").focus();
+      
+      hidden = false;
+    }
+  
+  });
+
   // Function to load tweets from the server and render them on the page
+  $("#limit-alert").hide();
   const loadTweets = function () {
     // Clear the textarea content
     $("#tweets-container").empty();
@@ -98,7 +114,6 @@ $(document).ready(function () {
       renderTweets(data);
     });
   };
-
   // Initial call to load tweets when the page loads
   loadTweets();
 });
@@ -117,14 +132,14 @@ const isTweetValid = function (text) {
   $("#limit-alert").hide();
   // Check if the tweet is empty
   if (!text.length) {
-    $("#limit-alert").text("⚠️ You cannot enter an empty tweet. ⚠️").show();
-    setTimeout(() => $("#limit-alert").hide(), 5000);
+    $("#limit-alert").text("⚠️ You cannot enter an empty tweet. ⚠️").slideDown('fast');    
+    setTimeout(() => $("#limit-alert").slideUp('slow'), 5000);
     return false;
   }
   // Check if the tweet exceeds 140 characters
   else if (text.length > 140) {
-    $("#limit-alert").text(" ⚠️ Woah. The limit is 140 letters. ⚠️").show();
-    setTimeout(() => $("#limit-alert").hide(), 5000);
+    $("#limit-alert").text(" ⚠️ Woah. The limit is 140 letters. ⚠️").slideDown('fast');
+    setTimeout(() => $("#limit-alert").slideUp('slow'), 5000);
     return false;
   }
 
