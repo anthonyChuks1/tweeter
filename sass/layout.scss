@@ -42,3 +42,26 @@ section {
   width: 100%;
   padding: 30px;
 }
+
+#scroll-up{
+
+  color: #ffffff;
+  border-radius: 100%;
+  background-color: #948989;
+  width: 100px;
+  position: fixed;
+  height: 100px;
+  text-align: center;
+  font-size: 50px;
+  right: 100px;
+  bottom: 0px;
+  opacity: 0.5;
+
+  & i{
+    padding-top: 25px;
+  }
+}
+#scroll-up:hover{
+  color: #371717;
+  background-color: #9494409f;
+}
