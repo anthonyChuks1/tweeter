@@ -23,6 +23,7 @@ nav .right-content {
   font-family: "Source Sans 3", sans-serif;
   flex-direction: column;
   justify-content: center;
+  padding: 15px;
 }
 nav .right-content:hover {
   transform: scale(0.9);
